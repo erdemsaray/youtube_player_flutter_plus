@@ -1,6 +1,4 @@
-# Youtube Player IFrame
-![YOUTUBE PLAYER IFRAME](packages/youtube_player_flutter/misc/ypf_banner.png)
-
+# Youtube Player IFrame Plus
 
 [![pub package](https://img.shields.io/pub/v/youtube_player_iframe.svg)](https://pub.dartlang.org/packages/youtube_player_iframe)
 [![licence](https://img.shields.io/badge/licence-BSD-orange.svg)](https://github.com/sarbagyastha/youtube_player_flutter/blob/master/LICENSE)
@@ -12,6 +10,9 @@
 
 Flutter plugin for playing or streaming YouTube videos inline using the official [**iFrame Player API**](https://developers.google.com/youtube/iframe_api_reference).
 The package exposes almost all the API provided by **iFrame Player API**. So, it's 100% customizable.
+
+This package adds the rel: 0 and modestbranding: 1 parameters to the player.
+
 
 Note: This package only provides default youtube web player's skin. If you need Youtube Android player like player with gesture support, use [youtube_player_flutter](https://pub.dartlang.org/packages/youtube_player_flutter) instead.
 `youtube_player_flutter` also uses this package as dependency. (Migration Pending)
@@ -41,8 +42,6 @@ Supported Platforms:
 
 For Web, Flutter's [HtmlElementView](https://api.flutter.dev/flutter/widgets/HtmlElementView-class.html).
 For Android & iOS, the package uses [flutter_inappwebview](https://pub.dartlang.org/packages/flutter_inappwebview) under-the-hood.
-
-If your app uses services workers, you may need add additional configuration on the app startup code, in order to ensure that the web view behaviour don't get unstable. To do so, please refer to the [flutter_inappwebview documentation](https://inappwebview.dev/docs/service-worker-api/).
 
 Since *flutter_inappwebview* relies on Flutter's mechanism for embedding Android and iOS views, this plugin might share some known issues tagged with the [platform-views](https://github.com/flutter/flutter/labels/a%3A%20platform-views) label.
 
@@ -82,7 +81,7 @@ YoutubePlayerController _controller = YoutubePlayerController(
     ),
 );
 
-YoutubePlayerIFrame(
+YoutubePlayerIFramePlus(
     controller: _controller,
     aspectRatio: 16 / 9,
 ),
